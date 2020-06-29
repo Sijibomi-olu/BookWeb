@@ -1,0 +1,58 @@
+﻿@model IEnumerable<BookWeb.Entities.Author>
+
+@{
+    ViewData["Title"] = "Authors";
+}
+
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h3 class="text-themecolor"> Authors </h3>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row ">
+        <div class=" col-lg-12 ">
+            <div class="tm-bg-primary-dark tm-block tm-block-products">
+                <div class="tm-product-table-container ">
+                    <table class="table table-hover tm-table-small tm-product-table align-self-center ">
+                        <thead>
+                            <tr>
+                                <th scope="col">&nbsp;</th>
+                                <th scope="col">#</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Created By</th>
+                                <th scope="col">Date Created</th>
+                                <th scope="col">&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var author in Model)
+                            {
+                                <tr>
+                                    <th scope="col"> &nbsp;</th>
+                                    <th scope="col">@author.Id</th>
+                                    <th scope="col">@author.Title</th>
+                                    <th scope="col">@author.Name</th>
+                                    <th scope="col">@author.CreatedBy</th>
+                                    <th scope="col">@author.DateCreated</th>
+                                    <th scope="col">&nbsp;</th>
+                                    <td><a asp-controller="Author" asp-action="Edit" asp-route-id="@author.Id" ><i class="fa fa-pen" style="color:white;" aria-hidden="true"></i></a> </td>
+                                    <td><a asp-controller="Author" asp-action="Delete" asp-route-id="@author.Id"><i class="fa fa-trash" style="color:darkred;" aria-hidden="true"></i></a> </td>
+                                </tr>
+                            },
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-12 col-12 align-self-center">
+                    <a asp-controller="Author" asp-action="Create" class="btn float-right hidden-sm-down btn-success"><i class="mdi mdi-plus-circle"></i>New Author</a>
+                </div>
+                <!-- table container -->
+
+
+            </div>
+        </div>
+        
+    </div>
+</div> 
