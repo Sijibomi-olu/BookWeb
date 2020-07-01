@@ -1,0 +1,60 @@
+﻿@model IEnumerable<BookWeb.Entities.Characteristics>
+
+@{
+    ViewData["Title"] = "Characteristicss";
+}
+
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h3 class="text-themecolor"> Characteristicss </h3>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row ">
+        <div class=" col-lg-12 ">
+            <div class="tm-bg-primary-dark tm-block tm-block-products">
+                <div class="tm-product-table-container ">
+                    <table class="table table-hover tm-table-small tm-product-table align-self-center ">
+                        <thead>
+                            <tr>
+                                <th scope="col">&nbsp;</th>
+                                <th scope="col">#</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Length</th>
+                                <th scope="col">Width</th>
+                                <th scope="col">Pages</th>                                
+                                <th scope="col">Date Created</th>
+                                <th scope="col">&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var characteristics in Model)
+                            {
+                            <tr>
+                                <th scope="col"> &nbsp;</th>
+                                <th scope="col">@characteristics.Id</th>
+                                <th scope="col">@characteristics.Title</th>
+                                <th scope="col">@characteristics.Lengthincm</th>
+                                <th scope="col">@characteristics.Widthincm</th>
+                                <th scope="col">@characteristics.Numofpages</th>
+                                <th scope="col">@characteristics.DateCreated</th>
+                                <th scope="col">&nbsp;</th>
+                                <td><a asp-controller="Characteristics" asp-action="Edit" asp-route-id="@characteristics.Id"><i class="fa fa-pen" style="color:white;" aria-hidden="true"></i></a> </td>
+                                <td><a asp-controller="Characteristics" asp-action="Delete" asp-route-id="@characteristics.Id"><i class="fa fa-trash" style="color:darkred;" aria-hidden="true"></i></a> </td>
+                            </tr>
+                            },
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-12 col-12 align-self-center">
+                    <a asp-controller="Characteristics" asp-action="Create" class="btn float-right hidden-sm-down btn-success"><i class="mdi mdi-plus-circle"></i>New Characteristics</a>
+                </div>
+                <!-- table container -->
+
+
+            </div>
+        </div>
+        
+    </div>
+</div> 

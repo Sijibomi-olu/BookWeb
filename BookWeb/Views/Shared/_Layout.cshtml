@@ -38,7 +38,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto h-100">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">
+                            <a class="nav-link" href="#">
                                 <i class="fas fa-tachometer-alt"></i>
                                 Dashboard
                                 <span class="sr-only">(current)</span>
@@ -47,9 +47,9 @@
                         <li class="nav-item">
 
                             <a asp-controller="Author" asp-action="Index" class="nav-link">
-                                <i class="far fa-user"></i>                             
-                                Authors                                
-                            </a>                            
+                                <i class="far fa-user"></i>
+                                Authors
+                            </a>
                         </li>
 
                         <li class="nav-item">
@@ -65,11 +65,23 @@
                                 Category
                             </a>
                         </li>
-                        <li class="nav-item ">      
+                        <li class="nav-item ">
                             <a class="nav-link" asp-controller="Genre" asp-action="Index">
                                 <i class="fas fa-film"></i>
-                                Genre 
-                            </a>                            
+                                Genre
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" asp-controller="Characteristics" asp-action="Index">
+                                <i class="fas fa-key"></i>
+                                Characteristics
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" asp-controller="User" asp-action="Index">
+                                <i class="fas fa-user"></i>
+                                User
+                            </a>
                         </li>
                     </ul>
                     <ul class="navbar-nav">
